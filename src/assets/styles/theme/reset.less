@@ -1,61 +1,43 @@
-// 框架基础样式
-.layout-box {
-	height: 100vh;
-	.layout-header { // 顶部高度
-	  line-height: @primary-height;
-	  height: @primary-height;
-	}
-	 
-	.layout-logo {
-		width: 120px;
-		height: 31px;
-		background: @border-color-base;
-		border-radius: 6px;
-		margin: 8px 28px 8px 0;
-		float: left;
-	}
-	
-	.layout-footer {
-		position: relative;
-		font-size: @font-size-medium;
-		background: @white;
-		padding: 12px;
-		margin: 10px -24px -24px;
-		text-align: center;
-	}
-	.layout-menu {
-		.ant-layout-sider-collapsed {
-			.anticon {
-				font-size: 18px !important;
-				transition: all 0.3s;
-			}
-			.nav-text {
-				display: none;
-			}
-		}
-	}
-	
-	.layout-content {
-		padding: 0 24px 24px;
-		.layout-breadcrumb {
-			margin: 12px 0;
-			.trigger {
-				font-size: @font-size-big;
-				padding: 0 10px 0 0;
-				vertical-align: middle;
-				cursor: pointer;
-				transition: all .3s;
-				position: relative;
-				top: -1px;
-				&:hover  {
-				color: @primary-color;
-				}
-			}
-			.spec-breadcrumb-item {
-				& + .ant-breadcrumb-separator {
-					display: none;
-				}
-			}
-		}
-	}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }

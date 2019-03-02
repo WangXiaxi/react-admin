@@ -1,0 +1,82 @@
+// 框架基础样式
+.layout-box {
+	height: 100vh;
+	.layout-header { // 顶部高度
+		line-height: @primary-height;
+		height: @primary-height;
+		padding: 0 24px;
+		display: flex;
+	}
+		
+	.layout-logo {
+		width: 160px;
+		height: 28px;
+		color: @white;
+		font-size: @font-size-small;
+		line-height: 28px;
+		text-indent: 30px;
+		background: url('../../images/logo-black.svg') no-repeat;
+		border-radius: 6px;
+		margin: 9px 16px 9px 0;
+	}
+	.layout-menu-hor {
+		flex: 1;
+	}
+	.layout-info {
+		width: 200px;
+		height: @primary-height;
+		li {
+			width: @primary-height;
+			float: right;
+			color: @white;
+			text-align: center;
+		}
+	}
+	.layout-mian {
+		background: @white;
+		padding: 8px 12px;
+	}
+	.layout-footer {
+		position: relative;
+		font-size: @font-size-medium;
+		background: @white;
+		padding: 12px;
+		margin: 10px -24px -24px;
+		text-align: center;
+	}
+	.layout-menu-ver {
+		.ant-layout-sider-collapsed {
+			.anticon {
+				font-size: 18px !important;
+				transition: all 0.3s;
+			}
+			.nav-text {
+				display: none;
+			}
+		}
+	}
+    
+	.layout-content {
+		padding: 0 10px 24px;
+		.layout-breadcrumb {
+			margin: 8px 0;
+			.trigger {
+				font-size: @font-size-big;
+				padding: 0 10px 0 0;
+				vertical-align: middle;
+				cursor: pointer;
+				transition: all .3s;
+				position: relative;
+				top: -1px;
+				&:hover  {
+					color: @primary-color;
+				}
+			}
+			.spec-breadcrumb-item {
+				& + .ant-breadcrumb-separator {
+					display: none;
+				}
+			}
+		}
+	}
+}
