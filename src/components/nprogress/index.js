@@ -3,13 +3,13 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
 class NProgressPage extends Component {
-  componentWillMount(){
+  componentWillMount() {
     NProgress.start()
   }
-  componentWillUnmount(){
+  componentWillUnmount() {
     NProgress.done()
   }
-  render () {
+  render() {
     return (
       <React.Fragment />
     )
