@@ -1,16 +1,18 @@
 import { observable, action } from 'mobx'
 
 class UserStore {
-  @observable isLogin = false // 登陆状态
+  @observable token = '' // token
   @observable userInfo = {} // 用户信息
 
-  @action logout(flag, info = {}) {
-    this.userInfo = info  //设置登录用户信息
-    if (flag) {
-      this.isLogin = true
-    } else {
-      this.isLogin = false
-    }
+  // 退出操作
+  @action logout = (flag, info = {}) => {
+    this.userInfo = {}
+    this.token = ''
+  }
+
+  // 登陆操作
+  @action loginIn = (info) => {
+
   }
 }
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Admin from './admin'
-import Login from './login'
+import Login from 'pages/login'
+import { Switch, Route } from 'react-router-dom'
 
 export default class Layout extends Component {
   state = {
@@ -18,13 +19,16 @@ export default class Layout extends Component {
   }
 
   render() {
-    const { loading, isLogin } = this.state
+    const { loading } = this.state
     return (
       <React.Fragment>
         {
           loading ? <div style={ styles.loadingTitle }>
             加载中。。。
-          </div> : (isLogin ? <Admin></Admin> : <Login></Login>)
+          </div> : <Switch>
+            <Route path="/admin" component={Admin} />
+            <Route path="/login" component={Login} />
+          </Switch>
         }
       </React.Fragment>
     )
