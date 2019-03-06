@@ -10,6 +10,7 @@ const { Sider } = Layout
 class LeftMenuMain extends Component {
   constructor(props) {
     super(props)
+    this.state = {}
   }
   render() {
     const { appStore } = this.props

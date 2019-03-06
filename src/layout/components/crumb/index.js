@@ -5,7 +5,10 @@ import { inject, observer } from 'mobx-react'
 @inject('appStore')
 @observer
 class CrumbMain extends Component {
-
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
   render() {  
     const { appStore: { collapsed, changeCollapsed }} = this.props
     return (
