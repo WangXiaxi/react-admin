@@ -14,6 +14,7 @@ export default class ContentMain extends Component {
       <Content className="layout-mian">
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/home" exact component={Home} />
           <Route path="/buttons" exact component={Buttons} />
         </Switch>
       </Content>

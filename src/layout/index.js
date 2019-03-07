@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
-import Admin from './admin'
-import Login from 'pages/login'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, BrowserRouter as Router } from 'react-router-dom' // Route, Redirect,
+// import Admin from './admin'
+// import Login from 'pages/login'
+// import Error404 from 'pages/404'
+import FrontendAuth from 'components/frontendAuth'
+import { routerConfig } from 'routes'
 
 export default class Layout extends Component {
   state = {
@@ -21,16 +24,20 @@ export default class Layout extends Component {
   render() {
     const { loading } = this.state
     return (
-      <React.Fragment>
+      <Router>
         {
           loading ? <div style={ styles.loadingTitle }>
             加载中。。。
           </div> : <Switch>
-            <Route path="/admin" component={Admin} />
-            <Route path="/login" component={Login} />
+            <FrontendAuth config={routerConfig} />
+            {/* <Route path="/" exact component={Admin} />
+            <Route path="/admin"exact component={Admin} />
+            <Route path="/login"exact component={Login} />
+            <Route path="/404"exact component={Error404} />
+            <Redirect to="/404" /> */}
           </Switch>
         }
-      </React.Fragment>
+      </Router>
     )
   }
 }

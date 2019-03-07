@@ -1,0 +1,52 @@
+.scope-login-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(http://picture.ik123.com/uploads/allimg/161212/12-161212155254.jpg) center center;
+  &:before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  .login-form {
+    width: 300px;
+    height: 300px;
+    padding: 30px 30px 20px 30px;
+    background: rgba(255, 255, 255, 0.5);
+    .login-form-forgot {
+      float: right;
+    }
+    .login-form-button {
+      width: 100%;
+    }
+    .ant-form-explain {
+      position: absolute;
+      z-index: 99;
+      left: 102%;
+      top: 0;
+      height: 41px;
+    }
+    .ant-form-item-with-help {
+      margin-bottom: 24px;
+    }
+    #code {
+      position: relative;
+    }
+    .captcha {
+      position: absolute;
+      top: 5px;
+      right: 3px;
+      height: 28px;
+      width: 90px;
+    }
+  }
+}
