@@ -1,4 +1,6 @@
 import axios from 'axios'
+import { getToken } from './auth'
+import { message } from 'antd'
 
 // 创建一个 axios 实例
 const service = axios.create({
@@ -10,7 +12,7 @@ const service = axios.create({
 service.interceptors.request.use(config => {
   // 在请求发送之前做一些处理
   if (!(/^https:\/\/|http:\/\//.test(config.url))) {
-    const token = store.getters.token
+    const token = 123345
     if (token && token !== 'undefined') {
       // config.headers['Authorization'] = getToken() // 让每个请求携带token-- ['X-Token']为自定义key 请根据实际情况自行修改
       config.headers['token'] = getToken()
@@ -45,11 +47,11 @@ service.interceptors.response.use(
         case 200:
           return dataAxios
         case 40301:
-          alert('token失效')
+          message.error('token失效')
           return Promise.reject(dataAxios)
         default:
           // 不是正确的 code
-          alert('接口返回 status != 200')
+          message.error(dataAxios.message)
           return Promise.reject(dataAxios)
       }
     }
@@ -71,7 +73,6 @@ service.interceptors.response.use(
         default: break
       }
     }
-    errorLog(error)
     return Promise.reject(error)
   }
 )

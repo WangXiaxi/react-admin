@@ -1,7 +1,7 @@
-import request from '@/utils/request'
+import request from 'utils/request'
 
 // 登录
-export function loginByUsername(customNo, password, code, sercetkey) {
+export const loginByUsername = ({ customNo, password, code, sercetkey }) => {
   const data = {
     customNo,
     password,
@@ -10,7 +10,7 @@ export function loginByUsername(customNo, password, code, sercetkey) {
     code: code.toUpperCase()
   }
   return request({
-    url: '/admin/jwt/token',
+    url: '/api/admin/jwt/token',
     method: 'post',
     data
   })

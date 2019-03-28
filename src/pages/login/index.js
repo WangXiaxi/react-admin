@@ -3,6 +3,7 @@ import { Form, Icon, Input, Button } from 'antd'
 import PromptBox from 'components/promptBox'
 import './index.less'
 import { appConfig } from '../../config/appConfig'
+import { loginByUsername } from 'api/login'
 
 @Form.create()
 class Login extends Component {
@@ -20,7 +21,10 @@ class Login extends Component {
     e.preventDefault()
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values)
+        console.log('Received values of form: ', values)      
+        loginByUsername(values).then(res => {
+          console.log(res)
+        })
       }
     })
   }
